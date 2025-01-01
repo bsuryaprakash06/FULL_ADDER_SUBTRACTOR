@@ -2,7 +2,7 @@
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
-**DATE:** 25/10/2024
+**DATE: 25/10/2024**
 
 **AIM:**
 
@@ -90,15 +90,14 @@ endmodule
 ```
 **Full Subtractor**
 ```
-module fs(a,b,Bin,Borrow,Difference);
-input a,b,Bin;
-output Borrow,Difference;
-assign Difference = a ^ b ^ Bin;
-  assign Borrow = (a & b) | ((a ^ b) & Bin);
+module FS(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
 endmodule
-
 ```
-**RTL Diagram**
+**RTL DIAGRAM**
 
 **Full Adder**
 
@@ -106,10 +105,11 @@ endmodule
 
 **Full Subtractor**
 
-![image](https://github.com/user-attachments/assets/de00131b-5923-415b-8bc4-0f6de01404bc)
+![image](https://github.com/user-attachments/assets/ff68b900-1e10-4d7a-a9ed-2000f141156c)
 
 
-**Output/Timing Waveform**
+
+**Timing Waveform**
 
 **Full Adder**
 
@@ -117,12 +117,10 @@ endmodule
 
 **Full Subtractor**
 
-![image](https://github.com/user-attachments/assets/c104147c-a6bd-4774-ad79-872074dd10a4)
+![image](https://github.com/user-attachments/assets/d392363a-6730-421f-a8f9-063246ff7bd2)
+
 
 
 **Result:**
 
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
-
-
-
